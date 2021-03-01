@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int p = 11;
+		int q = 17;
+
+		int n = p * q;
+    
+		int x = (p - 1) * (q - 1);
+    
+		int d = 7;
+		int e = 0;
+
+		int cont = 0;
+    
+		for (int xx = 2; cont < 1; xx++) {
+			if ((xx * d) % x == 1) {
+				e = xx;
+				cont++;
+			}
+		}
+
+		System.out.println("Os valores primos são: " + p + " " + q);
+		System.out.println("n: " + n);
+		System.out.println("x: " + x);
+		System.out.println("d: " + d);
+		System.out.println("e: " + e);
+
+		
+		System.out.println("Digite o valor que deseja encriptar: ");
+		int original = sc.nextInt();
+		int alterado = (int) Math.pow((original), e);
+		int cifrado = alterado % n;
+		System.out.println("encriptamento: " + cifrado);
+    
+    
+		int descriptado = (int) Math.pow((alterado), d);
+		int final = original % n;
+		System.out.println("descriptamento: " + final);
+	}
+}
